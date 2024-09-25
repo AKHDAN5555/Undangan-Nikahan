@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0e4d7;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+            opacity: 0; /* Start hidden */
+            transform: translateY(20px); /* Start slightly lower */
+            animation: fadeInUp 1s forwards; /* Apply animation */
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1; /* Fully visible */
+                transform: translateY(0); /* Move to original position */
+            }
+        }
+        h1 {
+            color: #8e44ad;
+            font-size: 2.5em;
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 1s forwards; /* Apply animation */
+            animation-delay: 0.5s; /* Delay for effect */
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1; /* Fully visible */
+            }
+        }
+        h2 {
+            color: #2980b9;
+            font-size: 2em;
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 1s forwards; /* Apply animation */
+            animation-delay: 1s; /* Delay for effect */
+        }
+        p {
+            line-height: 1.6;
+            color: #34495e;
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 1s forwards; /* Apply animation */
+            animation-delay: 1.5s; /* Delay for effect */
+        }
+        .details {
+            margin-top: 20px;
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 1em;
+            color: #7f8c8d;
+        }
+        .image-container {
+            margin-bottom: 20px;
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .link-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #2980b9;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease; /* Transition for hover effect */
+        }
+        .link-button:hover {
+            background-color: #3498db; /* Change color on hover */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="image-container">
+        <img src="https://via.placeholder.com/600x200?text=Selamat+Datang" alt="Selamat Datang">
+    </div>
+    
+    <h1>Undangan Pernikahan</h1>
+    <p>Kepada Yth,</p>
+    <p>Saudara/i [Nafi Ihsan Maulana]</p>
+
+    <p>Dengan hormat, kami mengundang Anda untuk hadir dalam acara pernikahan kami.</p>
+
+    <div class="details">
+        <h2>Detail Acara</h2>
+        <p>Tanggal: [19 september 2024]</p>
+        <p>Waktu: [06.00]</p>
+        <p>Tempat: [Bulusan]</p>
+    </div>
+
+    <a href="COVER U.html" class="link-button">Informasi Lebih Lanjut</a>
+
+    <div class="footer">
+        <p>Terima kasih atas perhatian Anda.</p>
+    </div>
+</div>
+
+</body>
+</html>

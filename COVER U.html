@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> <!-- Menambahkan font -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0e68c; /* Warna latar belakang */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff; /* Warna latar belakang undangan */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #e74c3c; /* Warna judul */
+            animation: fadeIn 2s; /* Animasi muncul */
+        }
+        h2 {
+            text-align: center;
+            margin-top: 10px;
+            color: #2c3e50; /* Warna sub-judul */
+            animation: fadeIn 2s; /* Animasi muncul */
+        }
+        p {
+            line-height: 1.6;
+            text-align: center;
+        }
+        .details {
+            margin-top: 20px;
+            border-top: 2px solid #e74c3c; /* Garis pemisah */
+            padding-top: 10px;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+        .countdown {
+            display: flex; /* Menggunakan flexbox untuk kotak */
+            justify-content: space-around; /* Menyebar kotak secara merata */
+            margin-top: 20px;
+        }
+        .countdown-box {
+            background-color: #e74c3c; /* Warna kotak hitung mundur */
+            color: white; /* Warna teks di dalam kotak */
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            width: 80px; /* Lebar kotak */
+        }
+        .heart {
+            font-size: 50px;
+            color: #ff69b4; /* Warna simbol hati pink */
+            text-align: center;
+            animation: heartbeat 2s infinite; /* Animasi jantung */
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .heart-text {
+            font-family: 'Great Vibes', cursive; /* Font untuk teks cinta */
+            font-size: 24px; /* Ukuran font untuk teks cinta */
+            text-align: center;
+            color: #ff69b4; /* Warna teks cinta pink */
+            animation: fadeInUp 2s; /* Animasi muncul dari bawah */
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(-20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        h1:hover {
+            color: #c0392b; /* Warna saat hover */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Undangan Pernikahan</h1>
+    <h2>Dengan Hormat</h2>
+    <p>Kami mengundang Anda untuk merayakan hari bahagia kami.</p>
+
+    <!-- Tambahkan foto di sini -->
+    <img src="T.png" alt="Foto Pengantin" style="width:100%; border-radius:10px;">
+
+    <div class="details">
+        <p><strong>Nama Pengantin Pria:</strong> John Doe</p>
+        <p><strong>Nama Pengantin Wanita:</strong> Jane Smith</p>
+        <p><strong>Tanggal:</strong> Sabtu, 15 November 2024</p>
+        <p><strong>Waktu:</strong> Pukul 14.00 WIB</p>
+        <p><strong>Tempat:</strong> Gedung Serbaguna ABC<br>
+           Jl. Contoh No.123, Jakarta</p>
+    </div>
+
+    <div class="countdown">
+        <div class="countdown-box" id="days">00<br><span>Hari</span></div>
+        <div class="countdown-box" id="hours">00<br><span>Jam</span></div>
+        <div class="countdown-box" id="minutes">00<br><span>Menit</span></div>
+        <div class="countdown-box" id="seconds">00<br><span>Detik</span></div>
+    </div>
+
+    <div class="heart">💗</div>
+    <div class="heart-text">Cinta Kami Selamanya</div>
+
+    <p>Kehadiran Anda sangat berarti bagi kami.</p>
+
+    <div class="footer">
+        <p>Dengan cinta,<br>John & Jane</p>
+    </div>
+</div>
+
+<script>
+// Hitung mundur hingga tanggal pernikahan
+const weddingDate = new Date("November 15, 2024 14:00:00").getTime();
+
+const countdownFunction = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    // Hitung waktu dalam hari, jam, menit dan detik
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Tampilkan hasil di elemen dengan id masing-masing
+    document.getElementById("days").innerHTML = days + "<br><span>Hari</span>";
+    document.getElementById("hours").innerHTML = hours + "<br><span>Jam</span>";
+    document.getElementById("minutes").innerHTML = minutes + "<br><span>Menit</span>";
+    document.getElementById("seconds").innerHTML = seconds + "<br><span>Detik</span>";
+
+    // Jika hitung mundur selesai
+    if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("days").innerHTML = "Selamat Datang!";
+        document.getElementById("hours").innerHTML = "";
+        document.getElementById("minutes").innerHTML = "";
+        document.getElementById("seconds").innerHTML = "";
+    }
+}, 1000);
+</script>
+
+</body>
+</html>
